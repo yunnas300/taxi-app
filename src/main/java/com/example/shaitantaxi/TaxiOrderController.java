@@ -12,13 +12,13 @@ import java.time.format.DateTimeFormatter;
 public class TaxiOrderController {
 
     @FXML
-    private TextField startRegionField;
+    public TextField startRegionField;
     @FXML
-    private TextField endRegionField;
+    public TextField endRegionField;
     @FXML
-    private ComboBox<String> carTypeComboBox;
+    public ComboBox<String> carTypeComboBox;
     @FXML
-    private ComboBox<String> paymentMethodComboBox;
+    public ComboBox<String> paymentMethodComboBox;
     @FXML
     private CheckBox childSeatCheckBox;
     @FXML
@@ -26,13 +26,13 @@ public class TaxiOrderController {
     @FXML
     private CheckBox afterPartyCheckBox;
     @FXML
-    private ComboBox<Integer> numPeopleComboBox;
+    public ComboBox<Integer> numPeopleComboBox;
     @FXML
     private Button orderButton;
     @FXML
     private Button calculatePriceButton;
     @FXML
-    private Label priceLabel;
+    public Label priceLabel;
 
     private static final String ORDERS_FILE_PATH = "orders.txt";
     private BufferedWriter writer;
@@ -53,7 +53,7 @@ public class TaxiOrderController {
         }
     }
 
-    private void handleOrderButtonAction() {
+    public void handleOrderButtonAction() {
         String startRegionStr = startRegionField.getText().toUpperCase();
         String endRegionStr = endRegionField.getText().toUpperCase();
 
@@ -75,7 +75,7 @@ public class TaxiOrderController {
         }
     }
 
-    private void handleCalculatePriceButtonAction() {
+    public void handleCalculatePriceButtonAction() {
         String startRegionStr = startRegionField.getText().toUpperCase();
         String endRegionStr = endRegionField.getText().toUpperCase();
 
