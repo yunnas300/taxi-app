@@ -7,15 +7,18 @@ class User {
 
     public function __construct($username, $password) {
         $this->username = $username;
-        $this->password = $password;
+        $this->password = password_hash($password, PASSWORD_BCRYPT);
     }
 
     // Регистрация пользователя
     public function save() {
-        // Без шифрования пароля
         $db->insert("users", [
                 "username" => $this->username,
                 "password" => $this->password
         ]);
+    }
+
+    public function checkPassword($inputPassword) {
+        return password_verify($inputPassword, $this->password);
     }
 }
