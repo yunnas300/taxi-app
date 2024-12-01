@@ -32,6 +32,16 @@ public class TaxiOrderIntegrationTest {
     }
 
     @Test
+    public void testInvalidOrderData() {
+        OrderRequest invalidRequest = new OrderRequest("", "", "", 0, "");
+
+        String result = orderProcessor.processOrder(invalidRequest);
+
+        assertEquals("Ошибка: Незаполнены обязательные поля", result, "Должно быть сообщение об ошибке.");
+        verify(mockDatabase, never()).save(any(Order.class));
+    }
+
+    @Test
     public void testDatabaseUnavailable() {
         OrderRequest request = new OrderRequest("Region A", "Region B", "Economy", 2, "Card");
 
