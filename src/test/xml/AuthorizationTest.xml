@@ -1,0 +1,15 @@
+<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="User Login and Taxi Order Test" enabled="true">
+    <stringProp name="ThreadGroup.num_threads">100</stringProp>  <!-- 100 користувачів -->
+    <stringProp name="ThreadGroup.ramp_time">10</stringProp>  <!-- Розгін на 10 секунд -->
+    <stringProp name="ThreadGroup.loops">1</stringProp> <!-- 1 ітерація на користувача -->
+
+    <LoginRequest>
+        <stringProp name="Login.username">user</stringProp>
+        <stringProp name="Login.password">password123</stringProp>
+    </LoginRequest>
+
+    <TaxiOrderRequest>
+        <stringProp name="TaxiType">Standard</stringProp>
+        <stringProp name="Location">City Center</stringProp>
+    </TaxiOrderRequest>
+</ThreadGroup>
