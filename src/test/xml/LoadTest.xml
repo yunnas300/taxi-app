@@ -1,0 +1,13 @@
+<ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Page Load Test" enabled="true">
+    <stringProp name="ThreadGroup.num_threads">100</stringProp>
+    <stringProp name="ThreadGroup.ramp_time">10</stringProp>
+
+    <HTTPRequest samplename="Load Taxi Order Page" path="/taxi-order" method="GET">
+        <stringProp name="HTTPRequest.URL">http://yourwebsite.com/taxi-order</stringProp>
+    </HTTPRequest>
+
+    <AssertionResult>
+        <stringProp name="Assertion.condition">less_than</stringProp>
+        <stringProp name="Assertion.value">2000</stringProp>  <!-- Час завантаження має бути меншим за 2 секунди -->
+    </AssertionResult>
+</ThreadGroup>
